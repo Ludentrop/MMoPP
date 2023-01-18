@@ -32,7 +32,7 @@ plt.style.use("cyberpunk")
 plt.title('Divergence angle', fontsize=15)
 plt.xlabel('Distance from the Laser, m', fontsize=15)
 plt.ylabel('Laser Beam Diameter on a Display, m', fontsize=15)
-plt.plot(distance, D2, marker='o')
+plt.plot(distance, D2, marker='o', color='m')
 plt.legend()
 mplcyberpunk.add_glow_effects()
 

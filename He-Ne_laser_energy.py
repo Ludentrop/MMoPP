@@ -41,10 +41,10 @@ plt.style.use("cyberpunk")
 plt.title("\n".join(wrap("Empirical and theoretical laws describing the effect of the discharge current on the generated laser power", 60)))
 plt.xlabel('Ip, mA', fontsize=15)
 plt.ylabel('Pp, mW', fontsize=15)
-plt.plot(Ip, Pp, label='Theoretical', marker='o')
+plt.plot(Ip, Pp, label='Theoretical', marker='s')
 plt.plot(Ip, P, label='Empirical', marker='o')
 plt.legend()
-mplcyberpunk.add_glow_effects()
+mplcyberpunk.make_lines_glow()
 
 
 # Printing
