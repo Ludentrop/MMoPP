@@ -3,27 +3,37 @@ import matplotlib.pyplot as plt
 import mplcyberpunk
 
 
-def psi_squared(x, A=1, alpha=1, n=0):
-    return A**2 * np.sin(np.pi/alpha * (n+1) * x)**2
+def psi(x, n, A=1, alpha=1):
+    return A * np.sin(n*x*np.pi/alpha)
+
+
+def psi_squared(x, n, A=1, alpha=1):
+    return A**2 * np.sin(np.pi/alpha*n*x)**2
 
 
 x = np.linspace(0, 1, 100)
-psi0 = [psi_squared(i, n=0) for i in x]
-psi1 = [psi_squared(i, n=1) for i in x]
-psi2 = [psi_squared(i, n=2) for i in x]
+psi1 = [psi(i, 1) for i in x]
+psi2 = [psi(i, 2) for i in x]
+psi3 = [psi(i, 3) for i in x]
 
-labels = ['n=0', 'n=1', 'n=2']
-colors = ['m', 'b', 'r']
-psis = [psi0, psi1, psi2]
+psi_squared1 = [psi_squared(i, 1) for i in x]
+psi_squared2 = [psi_squared(i, 2) for i in x]
+psi_squared3 = [psi_squared(i, 3) for i in x]
+
+labels = [['n=3', 'n=3'], ['n=2', 'n=2'], ['n=1', 'n=1']]
+colors = [['m', 'm'], ['b', 'b'], ['r', 'r']]
+psis = [[psi3, psi_squared3], [psi2, psi_squared2], [psi1, psi_squared1]]
 
 plt.style.use('cyberpunk')
-fig, axs = plt.subplots(3, figsize=(10, 6))
+fig, axs = plt.subplots(3, 2, sharex=True, sharey=False, figsize=(10, 6))
 
-for i, ax in enumerate(axs):
-  axs[i].plot(x, psis[i], color=colors[i], label=labels[i])
-  axs[i].legend(loc='upper left')
-  axs[i].set_ylabel('Probability', fontsize=12, fontstyle='italic')
+for i in range(3):
+    for j in range(2):
+        axs[i][j].plot(x, psis[i][j], color=colors[i][j], label=labels[i][j])
+        axs[i][j].legend(loc='upper right')
 
-fig.suptitle('$\Psi$ Function Probability Density', fontsize=16, fontstyle='italic')
-fig.supxlabel('Barrier Width', fontsize=12, fontstyle='italic')
+
+fig.suptitle('\t\tEigenfunction\t\t\t\t\t $\Psi$ Function Probability Density', fontsize=16, fontstyle='italic', ha='center')
+fig.supxlabel('Barrier Width', fontsize=14, fontstyle='italic')
+fig.supylabel('Wave function and Probability', fontsize=14, fontstyle='italic')
 plt.show()
