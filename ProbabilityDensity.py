@@ -34,6 +34,6 @@ for i in range(3):
 
 
 fig.suptitle('\t\tEigenfunction\t\t\t\t\t $\Psi$ Function Probability Density', fontsize=16, fontstyle='italic', ha='center')
-fig.supxlabel('Barrier Width', fontsize=14, fontstyle='italic')
-fig.supylabel('Wave function and Probability', fontsize=14, fontstyle='italic')
+fig.supxlabel('Barrier Width', fontsize=15, fontstyle='italic')
+fig.supylabel('Wave function and Probability', fontsize=15, fontstyle='italic')
 plt.show()
