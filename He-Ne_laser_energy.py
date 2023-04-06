@@ -48,16 +48,17 @@ mplcyberpunk.make_lines_glow()
 
 
 # Printing
-print(tabulate(data, headers=head, tablefmt='psql'))
+# print(tabulate(data, headers=head, tablefmt='psql'))
+#
+# print(f'\nSigma1: {sigma1}\n',
+#       f'Sigma2: {sigma2}\n',
+#       f'Sigma3: {sigma3}\n',
+#       f'Sigma4: {sigma4}\n', sep='')
+#
+# print(f'Calculated Empirical Coefficient: {calculated_empirical_coefficient}\n',
+#       f'Calculated Coefficient: {calculated_coefficient}', sep='')
+#
+# input('ENTER to plot')
 
-print(f'\nSigma1: {sigma1}\n',
-      f'Sigma2: {sigma2}\n',
-      f'Sigma3: {sigma3}\n',
-      f'Sigma4: {sigma4}\n', sep='')
-
-print(f'Calculated Empirical Coefficient: {calculated_empirical_coefficient}\n',
-      f'Calculated Coefficient: {calculated_coefficient}', sep='')
-
-input('ENTER to plot')
 
 plt.show()
